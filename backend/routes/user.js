@@ -138,7 +138,7 @@ router.put("/", authMiddleware, async (req, res) => {
     const { success } = updateBody.safeParse(req.body)
 
     if (!success) {
-        res.status(411).json({
+        return res.status(411).json({
             message: "Error while updating information"
         })
     }
